@@ -10,7 +10,11 @@ body {
 }
 
 h2 {
-    margin-top: 150px;
+    margin-top: 155px;
+}
+
+#skills {
+    background-color: #EDEDED;
 }
 
 .text-muted {
