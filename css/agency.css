@@ -14,7 +14,7 @@ body {
 }
 
 #awards{
-    background-color: #EDEDED;
+    background-color: #fff;
 }
 
 .text-muted {
@@ -142,7 +142,7 @@ fieldset[disabled] .btn-primary.active {
 .btn-xl:active,
 .btn-xl.active,
 .open .dropdown-toggle.btn-xl {
-    border-color: #fff;
+    border-color: #76D4C2;
     color: #fff;
     background-color: #67CFBB;
 }
@@ -185,7 +185,7 @@ fieldset[disabled] .btn-xl.active {
 
 .navbar-default .navbar-brand {
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    color: #6DE3CD;
+    color: #fff;
 }
 
 .navbar-default .navbar-brand:hover,
@@ -281,10 +281,11 @@ header {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+    height: 500px;
 }
 
 header .intro-text {
-    padding-top: 100px;
+    padding-top: 200px;
     padding-bottom: 50px;
 }
 
@@ -300,15 +301,19 @@ header .intro-text .intro-heading {
     margin-bottom: 25px;
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 50px;
+    font-size: 30px;
     font-weight: 700;
     line-height: 50px;
     color: #222;
 }
 
 @media(min-width:768px) {
+    header {
+        height: 600px;
+    }
+
     header .intro-text {
-        padding-top: 300px;
+        padding-top: 250px;
         padding-bottom: 200px;
     }
 
