@@ -10,14 +10,6 @@ body {
     font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
-#skills {
-    background-color: #EDEDED;
-}
-
-#awards{
-    background-color: #fff;
-}
-
 .text-muted {
     color: #777;
 }
@@ -306,6 +298,7 @@ header .intro-text {
     padding-top: 200px;
     padding-bottom: 50px;
     position: relative;
+    text-align: center;
 }
 
 header .intro-text .intro-lead-in {
@@ -334,6 +327,7 @@ header .intro-text .intro-heading {
     header .intro-text {
         padding-top: 250px;
         padding-bottom: 200px;
+        text-align: left;
     }
 
     header .intro-text .intro-lead-in {
@@ -341,6 +335,7 @@ header .intro-text .intro-heading {
         font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
         font-size: 40px;
         font-style: italic;
+        text-align: left;
         line-height: 40px;
     }
 
@@ -377,6 +372,22 @@ section h3.section-subheading {
     section {
         padding: 150px 0;
     }
+}
+
+@media(max-width:768px) {
+    #services {
+       margin-top: 50px;
+    }
+}
+
+
+
+#skills {
+    background-color: #EDEDED;
+}
+
+#awards{
+    background-color: #fff;
 }
 
 .service-heading {
