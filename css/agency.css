@@ -374,14 +374,6 @@ section h3.section-subheading {
     }
 }
 
-@media(max-width:768px) {
-    #services {
-       margin-top: 50px;
-    }
-}
-
-
-
 #skills {
     background-color: #EDEDED;
 }

@@ -18,6 +18,7 @@ $(function() {
       particles: {
         color: '#fff',
         shape: 'circle',
+        resize: true,
         opacity: 1,
         size: 2.5,
         size_random: true,
@@ -27,7 +28,7 @@ $(function() {
           distance: 250,
           color: '#fff',
           opacity: 0.5,
-          width: 1.5,
+          width: 2,
           condensed_mode: {
             enable: false,
             rotateX: 600,
