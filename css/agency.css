@@ -4,6 +4,7 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
+
 body {
     overflow-x: hidden;
     font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -23,6 +24,22 @@ body {
 
 .text-primary {
     color: #6DE3CD;
+}
+
+.particles__canvas {
+  height: 90%;
+  width: 100%;
+  background-color: #6DE3CD;
+  padding: 0px;
+}
+
+.particles__container {
+    display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 p {
@@ -271,7 +288,7 @@ fieldset[disabled] .btn-xl.active {
 }
 
 header {
-    text-align: center;
+    /*text-align: center;
     color: #fff;
     background-attachment: scroll;
     background-image: url(../img/header-bg.jpg);
@@ -281,12 +298,13 @@ header {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
-    height: 500px;
+    height: 500px;*/
 }
 
 header .intro-text {
     padding-top: 200px;
     padding-bottom: 50px;
+    position: relative;
 }
 
 header .intro-text .intro-lead-in {

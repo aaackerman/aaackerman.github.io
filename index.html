@@ -39,7 +39,6 @@
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
@@ -50,7 +49,6 @@
                 <a class="navbar-brand page-scroll" href="#page-top">AAACKERMAN</a>
             </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="hidden">
@@ -79,13 +77,22 @@
     </nav>
 
     <!-- Header -->
+    <div
+      class="particles__container"
+      id="particles">
+      <canvas class="particles__canvas"></canvas>
+    </div>
+
     <header>
         <div class="container">
             <div class="intro-text">
                 <div class="intro-lead-in">Full Stack Web Developer & Interactive Storyteller</div>
-                <div class="intro-heading" style="color: white">MEET ALEXANDRA</div>
-                <a href="#services" class="page-scroll btn btn-xl">Tell Me More</a>
+                <a
+                    class="intro-heading page-scroll"
+                    href="#services"
+                    style="color: white">MEET ALEXANDRA</a>
             </div>
+        </div>
     </header>
 
     <!-- Services Section -->
@@ -669,6 +676,8 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="js/agency.js"></script>
+
+    <script src="js/particles.js"></script>
 
 </body>
 
