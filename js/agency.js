@@ -14,6 +14,11 @@ $(function() {
         event.preventDefault();
     });
 
+
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+      var particleNum = 30;
+    }
+
     particlesJS('particles', {
       particles: {
         color: '#fff',
@@ -22,7 +27,7 @@ $(function() {
         opacity: 1,
         size: 2.5,
         size_random: true,
-        nb: 100,
+        nb: particleNum || 100,
         line_linked: {
           enable_auto: true,
           distance: 250,

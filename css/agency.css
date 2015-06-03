@@ -19,10 +19,16 @@ body {
 }
 
 .particles__canvas {
-  height: 90%;
+  height: 500px;
   width: 100%;
   background-color: #6DE3CD;
   padding: 0px;
+}
+
+@media only screen and (min-width : 480px) {
+    .particles__canvas {
+        height: 600px;
+    }
 }
 
 .particles__container {
@@ -350,7 +356,7 @@ header .intro-text .intro-heading {
 }
 
 section {
-    padding: 100px 0;
+    padding: 200px 0;
 }
 
 section h2.section-heading {
