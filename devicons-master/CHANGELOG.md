@@ -8,9 +8,22 @@
 [v1.3.1](#v1.3.1)
 [1.4.0](#1.4.0)
 [1.5.0](#1.5.0)
-[1.6.0](#1.5.0)
+[1.6.0](#1.6.0)
+[1.8.0](#1.8.0)
 
-## 1.5.0
+## 1.8.0
+Change log and fixes in version 1.7.0:
+1. Added Appcelerator, Asterisk, AQS, Digital ocean, Dlang, Docker, Erlang, Google Cloud Platform, Grails, Illustrator, Intellij, MaterializeCSS, Open Shift, Photoshop, Rackspace, React, Red Hat, ScriptCS, Spark, Sqllite, VIM .
+2. Added full PNG and SVG files.
+
+
+## 1.7.0
+Change log and fixes in version 1.7.0:
+1. Added Sublime Text, Rust, FSharp, Meteor.js and Ionic icons.
+2. Removed SVG and PNG sprites.
+
+
+## 1.6.0
 Change log and fixes in version 1.6.0:
 1. Added Komodo, Coda, Bintray, Terminal, Source code, Responsive web design, Dart, Aptana, MailChimp, NetBeans, Dreamweaver, Brackets, Eclipse, Cloud9, Scrum, MongoDB and Prolog icons.
 

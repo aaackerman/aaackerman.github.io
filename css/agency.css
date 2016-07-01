@@ -14,6 +14,10 @@ p {
     font-family: Garamond, Georgia, serif;
 }
 
+.devicons {
+    margin-top: 25px;
+}
+
 .text-muted {
     color: #777;
 }
@@ -25,13 +29,13 @@ p {
 .particles__canvas {
   height: 500px;
   width: 100%;
-  background-color: #6DE3CD;
+  background-color: #000000;
   padding: 0px;
 }
 
 @media only screen and (min-width : 480px) {
     .particles__canvas {
-        height: 600px;
+        height: 680px;
     }
 }
 
@@ -45,7 +49,7 @@ p {
 }
 
 p {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.75;
 }
 
@@ -317,6 +321,7 @@ header .intro-text .intro-lead-in {
     font-size: 22px;
     font-style: italic;
     line-height: 22px;
+    color: #ffffff;
 }
 
 header .intro-text .intro-heading {
@@ -373,7 +378,7 @@ section h3.section-subheading {
     margin-bottom: 75px;
     text-transform: none;
     font-family: Garamond, Georgia, serif;
-    font-size: 16px;
+    font-size: 18px;
     font-style: italic;
     font-weight: 400;
 }

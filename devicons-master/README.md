@@ -3,7 +3,6 @@
 
 [![NPM version][npm-image]][npm-url] 
 [![Downloads][downloads-image]][npm-url] 
-[![Support me][gittip-image]][gittip-url] 
 
 
 
@@ -11,13 +10,13 @@ Devicons is a full stack iconic font ready to be shipped with your next project.
 Devicons iconic font is free to use and licensed under [MIT](http://opensource.org/licenses/MIT).  
 
 
-###Devicons icon set  1.6.0
+###Devicons icon set  1.8.0
 ![Devicons](http://i.imgur.com/VcgLGHN.png?1?6481)
 
 ## Use Devicons with a single line of code.
 Thanks to the wonderful guys of  [jsdelivr](http://www.jsdelivr.com/) you can now add Devicons into your project by adding the following code into the `<HEAD>` section of your project's HTML:
 
-`<link href='//cdn.jsdelivr.net/devicons/1.5.0/css/devicons.min.css' rel='stylesheet'>`
+`<link href='//cdn.jsdelivr.net/devicons/1.8.0/css/devicons.min.css' rel='stylesheet'>`
 
 
 ## Getting Started
@@ -49,6 +48,9 @@ Do you have any additional request? Drop me a line or support an issue.
 
 
 ##Changelog
+- 1.8.0 Added 21 new icons - 191 glyphs 
+- 1.7.0 Added 6 new icons - 170 glyphs 
+- 1.6.0 Added 19 new icons - 164 glyphs 
 - 1.5.0 Added 22 new icons - 145 glyphs 
 - 1.4.0 Added 12 new icons - 123 glyphs 
 - v1.3.1 Minor fixes for bower package manager
