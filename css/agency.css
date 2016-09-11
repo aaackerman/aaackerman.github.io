@@ -389,12 +389,12 @@ section h3.section-subheading {
     }
 }
 
-#skills {
-    background-color: #EDEDED;
+#skills, #story {
+  background-color: #fff;
 }
 
-#awards{
-    background-color: #fff;
+#awards, #about {
+  background-color: #EDEDED;
 }
 
 .service-heading {
