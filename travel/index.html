@@ -1,205 +1,72 @@
-
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>three.js webgl - equirectangular panorama</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-		<link type="text/css" rel="stylesheet" href="style.css">
-	</head>
-	<body>
-		<div id="container"></div>
-		<div id="info">
-			<a href="http://threejs.org" target="_blank" rel="noopener">three.js webgl</a> - equirectangular panorama demo. photo by <a href="http://www.flickr.com/photos/jonragnarsson/2294472375/" target="_blank" rel="noopener">Jón Ragnarsson</a>.<br />
-			drag equirectangular texture into the page.
-		</div>
 
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/105/three.min.js"></script>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Alexandra Ackerman is a web developer based out of New York City.">
+    <meta name="author" content="">
+    <title>Alexandra Ackerman</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../css/agency.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    <link href="devicons-master/css/devicons.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body id="page-top" class="index">
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <a class="navbar-brand page-scroll" href="#page-top">AAACKERMAN</a>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- About Section -->
+    <section id="about">
+	    <div class="container">
+	    </div>
+    </section>
+
+    <!-- jQuery Version 1.11.0 -->
+    <script src="js/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/cbpAnimatedHeader.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/agency.js"></script>
+
+    <script src="js/particles.js"></script>
+
+</body>
 
-		<script>
-
-			var camera, scene, renderer;
-
-			var isUserInteracting = false,
-				onMouseDownMouseX = 0, onMouseDownMouseY = 0,
-				lon = 0, onMouseDownLon = 0,
-				lat = 0, onMouseDownLat = 0,
-				phi = 0, theta = 0;
-
-			init();
-			animate();
-
-			function init() {
-
-				var container, mesh;
-
-				container = document.getElementById( 'container' );
-
-				camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 1100 );
-				camera.target = new THREE.Vector3( 0, 0, 0 );
-
-				scene = new THREE.Scene();
-
-				var geometry = new THREE.SphereBufferGeometry( 500, 60, 40 );
-				// invert the geometry on the x-axis so that all of the faces point inward
-				geometry.scale( - 1, 1, 1 );
-				var loader = new THREE.TextureLoader();
-				loader.crossOrigin = 'anonymous';
-				var texture = loader.load('./test.png');
-				// var texture = new THREE.TextureLoader().load('test.png');
-				var material = new THREE.MeshBasicMaterial( { map: texture } );
-
-				mesh = new THREE.Mesh( geometry, material );
-
-				scene.add( mesh );
-
-				renderer = new THREE.WebGLRenderer();
-				renderer.setPixelRatio( window.devicePixelRatio );
-				renderer.setSize( window.innerWidth, window.innerHeight );
-				container.appendChild( renderer.domElement );
-
-				document.addEventListener( 'mousedown', onPointerStart, false );
-				document.addEventListener( 'mousemove', onPointerMove, false );
-				document.addEventListener( 'mouseup', onPointerUp, false );
-
-				document.addEventListener( 'wheel', onDocumentMouseWheel, false );
-
-				document.addEventListener( 'touchstart', onPointerStart, false );
-				document.addEventListener( 'touchmove', onPointerMove, false );
-				document.addEventListener( 'touchend', onPointerUp, false );
-
-				//
-
-				document.addEventListener( 'dragover', function ( event ) {
-
-					event.preventDefault();
-					event.dataTransfer.dropEffect = 'copy';
-
-				}, false );
-
-				document.addEventListener( 'dragenter', function () {
-
-					document.body.style.opacity = 0.5;
-
-				}, false );
-
-				document.addEventListener( 'dragleave', function () {
-
-					document.body.style.opacity = 1;
-
-				}, false );
-
-				document.addEventListener( 'drop', function ( event ) {
-
-					event.preventDefault();
-
-					var reader = new FileReader();
-					reader.addEventListener( 'load', function ( event ) {
-
-						material.map.image.src = event.target.result;
-						material.map.needsUpdate = true;
-
-					}, false );
-					reader.readAsDataURL( event.dataTransfer.files[ 0 ] );
-
-					document.body.style.opacity = 1;
-
-				}, false );
-
-				//
-
-				window.addEventListener( 'resize', onWindowResize, false );
-
-			}
-
-			function onWindowResize() {
-
-				camera.aspect = window.innerWidth / window.innerHeight;
-				camera.updateProjectionMatrix();
-
-				renderer.setSize( window.innerWidth, window.innerHeight );
-
-			}
-
-			function onPointerStart( event ) {
-
-				isUserInteracting = true;
-
-				var clientX = event.clientX || event.touches[ 0 ].clientX;
-				var clientY = event.clientY || event.touches[ 0 ].clientY;
-
-				onMouseDownMouseX = clientX;
-				onMouseDownMouseY = clientY;
-
-				onMouseDownLon = lon;
-				onMouseDownLat = lat;
-
-			}
-
-			function onPointerMove( event ) {
-
-				if ( isUserInteracting === true ) {
-
-					var clientX = event.clientX || event.touches[ 0 ].clientX;
-					var clientY = event.clientY || event.touches[ 0 ].clientY;
-
-					lon = ( onMouseDownMouseX - clientX ) * 0.1 + onMouseDownLon;
-					lat = ( clientY - onMouseDownMouseY ) * 0.1 + onMouseDownLat;
-
-				}
-
-			}
-
-			function onPointerUp() {
-
-				isUserInteracting = false;
-
-			}
-
-			function onDocumentMouseWheel( event ) {
-
-				var fov = camera.fov + event.deltaY * 0.05;
-
-				camera.fov = THREE.Math.clamp( fov, 10, 75 );
-
-				camera.updateProjectionMatrix();
-
-			}
-
-			function animate() {
-
-				requestAnimationFrame( animate );
-				update();
-
-			}
-
-			function update() {
-
-				if ( isUserInteracting === false ) {
-
-					lon += 0.1;
-
-				}
-
-				lat = Math.max( - 85, Math.min( 85, lat ) );
-				phi = THREE.Math.degToRad( 90 - lat );
-				theta = THREE.Math.degToRad( lon );
-
-				camera.target.x = 500 * Math.sin( phi ) * Math.cos( theta );
-				camera.target.y = 500 * Math.cos( phi );
-				camera.target.z = 500 * Math.sin( phi ) * Math.sin( theta );
-
-				camera.lookAt( camera.target );
-
-				/*
-				// distortion
-				camera.position.copy( camera.target ).negate();
-				*/
-
-				renderer.render( scene, camera );
-
-			}
-
-		</script>
-	</body>
 </html>
