@@ -45,7 +45,7 @@
 				geometry.scale( - 1, 1, 1 );
 				var loader = new THREE.TextureLoader();
 				loader.crossOrigin = 'anonymous';
-				var texture = loader.load('test.png');
+				var texture = loader.load('./test.png');
 				// var texture = new THREE.TextureLoader().load('test.png');
 				var material = new THREE.MeshBasicMaterial( { map: texture } );
 
